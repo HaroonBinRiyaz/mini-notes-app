@@ -1,5 +1,6 @@
 import { User } from "../models/user.model.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 
 //register user
@@ -41,7 +42,7 @@ export const loginUser = async (req, res) =>{
     const {email, password} = req.body;
 
     const user = await User.findOne({email}).select("+password");
-    if(!user || !user.password){
+    if(!user){
         return res.status(401).json({
             ok: false,
             message: "invalid email or password"
@@ -55,9 +56,17 @@ export const loginUser = async (req, res) =>{
             message: "invalid email or password",
         });
     }
+
+    const accessToken = jwt.sign(
+        {id: user._id},
+        process.env.JWT_ACCESS_SECRET,
+        {expiresIn: process.env.JWT_ACCESS_EXPIRY},
+); 
+
     return res.status(200).json({
         ok: true,
-        message: "user logged in"
+        message: "user logged in",
+        token: accessToken
     })
 
 }

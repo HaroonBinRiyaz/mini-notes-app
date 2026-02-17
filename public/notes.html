@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Notes</title>
+
+<style>
+:root{
+    --accent:#dc2626;
+    --text:#111111;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --bg:#f5f7f9;
+}
+
+/* base */
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* header */
+header{
+    background:white;
+    border-bottom:1px solid var(--border);
+    padding:18px 32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.logout{
+    border:1px solid var(--border);
+    background:white;
+    padding:8px 16px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.logout:hover{
+    border-color:var(--accent);
+    color:var(--accent);
+}
+
+/* layout */
+.container{
+    max-width:760px;
+    margin:50px auto;
+    padding:0 20px;
+}
+
+/* add note */
+.new-note{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px;
+}
+
+textarea{
+    width:100%;
+    height:120px;
+    resize:none;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px;
+    font-size:15px;
+    outline:none;
+}
+
+textarea:focus{
+    border-color:var(--accent);
+}
+
+.add-btn{
+    margin-top:12px;
+    background:var(--text);
+    color:white;
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.add-btn:hover{
+    background:var(--accent);
+}
+
+/* notes list */
+.notes{
+    margin-top:30px;
+}
+
+.note{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-bottom:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.note-text{
+    font-size:15px;
+    line-height:1.4;
+    color:#1f2937;
+    max-width:85%;
+    word-wrap:break-word;
+}
+
+.delete{
+    border:none;
+    background:transparent;
+    color:var(--accent);
+    font-size:14px;
+    cursor:pointer;
+    padding:6px 10px;
+    border-radius:6px;
+    transition:.15s;
+}
+
+.delete:hover{
+    background:#fee2e2;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Note<span>Vault</span></div>
+    <button class="logout">Logout</button>
+</header>
+
+<div class="container">
+
+```
+<div class="new-note">
+    <textarea id="noteInput" placeholder="Write something..."></textarea>
+    <button class="add-btn">Add Note</button>
+</div>
+
+<div class="notes" id="notesList">
+    <!-- Notes will appear here -->
+    <!-- Example structure:
+    <div class="note">
+        <div class="note-text">My first note</div>
+        <button class="delete">Delete</button>
+    </div>
+    -->
+</div>
+```
+
+</div>
+
+<script src="notes.js"></script>
+
+</body>
+</html>

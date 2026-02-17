@@ -14,14 +14,18 @@ registerForm.addEventListener("submit", async(e)=>{
     })
 
     const json = await res.json();
-    document.getElementById("registerMsg").innerText = json.message;  
+    document.getElementById("registerMsg").innerText = json.message;
+
+    if (res.ok) {
+        registerForm.reset();
+    }
 
 })
 
 loginForm.addEventListener("submit", async(e)=>{
     e.preventDefault();
 
-    const data = new FormData(registerForm);
+    const data = new FormData(loginForm);
     const body = Object.fromEntries(data.entries());
 
     const res = await fetch("/api/login", {
@@ -32,5 +36,14 @@ loginForm.addEventListener("submit", async(e)=>{
 
     const json = await res.json();
     document.getElementById("loginMsg").innerText = json.message;
+    console.log("Token: ", json.token);
+
+    if (res.ok && json.token) {
+    localStorage.setItem("token", json.token);   // ⭐ store token
+    console.log("Token saved");
+    window.location.href = "./notes.html";
+
+}
+    
     
 })
