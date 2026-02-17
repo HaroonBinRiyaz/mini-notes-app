@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Notes App</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body{
+        height:100vh;
+        background:#f4f6f8;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+    }
+
+    h1{
+        margin-bottom:30px;
+        color:#222;
+        letter-spacing:1px;
+        font-weight:600;
+    }
+
+    .container{
+        display:flex;
+        gap:40px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .card{
+        background:white;
+        padding:30px 28px 45px;
+        width:280px;
+        border-radius:12px;
+        box-shadow:0px 6px 30px  rgba(0, 0, 0, 0.301);
+        transition:0.2s ease;
+    }
+
+    .card:hover{
+        transform:translateY(-3px);
+        box-shadow:0 10px 26px rgba(0,0,0,0.12);
+    }
+
+    .card h2{
+        text-align:center;
+        margin-bottom:20px;
+        color:#333;
+        font-weight:500;
+    }
+
+    form{
+        display:flex;
+        flex-direction:column;
+        gap:14px;
+    }
+
+    input{
+        padding:12px;
+        border-radius:8px;
+        border:1px solid #ddd;
+        outline:none;
+        transition:0.2s;
+        font-size:14px;
+    }
+
+    input:focus{
+        border-color:#4a90e2;
+        box-shadow:0 0 0 2px rgba(74,144,226,0.15);
+    }
+
+    button{
+        margin-top:6px;
+        padding:12px;
+        border:none;
+        border-radius:8px;
+        background:#19191a;
+        color:white;
+        font-weight:600;
+        cursor:pointer;
+        transition:0.2s;
+        letter-spacing:.5px;
+    }
+
+    button:hover{
+        background:rgb(47, 47, 47);
+    }
+
+    span{
+        color: red;
+    }
+
+    .card #registerForm #registerMsg{
+        font-size: 11px;
+        font-family: monospace;
+        text-align: center;
+
+    }
+
+    .card #loginForm #loginMsg{
+        font-size: 11px;
+        font-family: monospace;
+        text-align: center;
+
+    }
+
+
+    @media(max-width:650px){
+        .container{
+            flex-direction:column;
+            align-items:center;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Mini Notes <span>App</span></h1>
+
+<div class="container">
+
+    <!-- Register -->
+    <div class="card">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+            <input type="password" name="password" placeholder="Password" autocomplete="off" required>
+            <button type="submit">Register</button>
+            <p id="registerMsg"></p>
+        </form>
+    </div>
+
+    <!-- Login -->
+    <div class="card">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+            <input type="password" name="password" placeholder="Password" autocomplete="off" required>
+            <button type="submit">Login</button>
+            <p id="loginMsg"></p>
+        </form>
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
