@@ -72,7 +72,7 @@ Mini-Notes-App
 
 ## ⚙️ Installation & Setup
 1. Clone the repository
-git clone https://github.com/your-username/mini-notes-app.git
+git clone https://github.com/your-username/mini-notes-app.git in Terminal
 cd mini-notes-app
 2. Install dependencies
 npm install
