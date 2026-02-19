@@ -39,6 +39,7 @@ Authentication flow using JWT
 - MongoDB
 - Mongoose
 - JWT Authentication
+- bcrypt (hashing)
 
 ## 📁 Project Structure
 
@@ -116,7 +117,6 @@ Understand how apps actually work under the hood.
 - Timestamps UI
 - Better UI styling
 - Deploy online
-- Password hashing (bcrypt)
 - Refresh tokens
 
 ## Author
