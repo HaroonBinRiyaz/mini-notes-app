@@ -2,6 +2,8 @@ import express from "express";
 import dotenv from "dotenv"
 import { connectDB } from "./config/ConnectDB.js";
 import userRoutes from "./routes/user.routes.js";
+import noteRoutes from "./routes/notes.routes.js"
+
 
 dotenv.config()
 
@@ -16,6 +18,8 @@ app.use(express.static("public"));
 await connectDB();
 
 app.use("/api", userRoutes);
+app.use("/api", noteRoutes);
+
 
 app.listen(port, ()=>{
     console.log("The Server is running ✅");
