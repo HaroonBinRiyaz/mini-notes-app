@@ -141,6 +141,118 @@ textarea:focus{
     background:#fee2e2;
 }
 
+/* ---------------- RESPONSIVE ---------------- */
+
+/* tablets */
+@media (max-width: 768px){
+
+    header{
+        padding:16px 18px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .container{
+        margin:30px auto;
+    }
+
+    textarea{
+        height:110px;
+        font-size:14px;
+    }
+
+    .add-btn{
+        width:100%;
+        padding:12px;
+        font-size:14px;
+    }
+
+    .note{
+        padding:14px;
+    }
+
+    .note-text{
+        max-width:80%;
+        font-size:14px;
+    }
+}
+
+
+/* mobile phones */
+@media (max-width: 480px){
+
+    header{
+        flex-direction:column;
+        gap:12px;
+        align-items:flex-start;
+    }
+
+    .logout{
+        width:100%;
+        text-align:center;
+    }
+
+    .container{
+        margin:22px auto;
+        padding:0 14px;
+    }
+
+    .new-note{
+        padding:14px;
+    }
+
+    textarea{
+        height:100px;
+        font-size:14px;
+        padding:10px;
+    }
+
+    .notes{
+        margin-top:22px;
+    }
+
+    .note{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .note-text{
+        max-width:100%;
+        font-size:14px;
+    }
+
+    .delete{
+        align-self:flex-end;
+    }
+}
+
+
+/* very small devices */
+@media (max-width: 360px){
+
+    .logo{
+        font-size:18px;
+    }
+
+    textarea{
+        height:90px;
+        font-size:13px;
+    }
+
+    .add-btn{
+        font-size:13px;
+        padding:10px;
+    }
+
+    .note-text{
+        font-size:13px;
+    }
+}
+
+
 
 
 </style>
