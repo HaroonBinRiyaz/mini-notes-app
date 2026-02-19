@@ -46,16 +46,16 @@ Authentication flow using JWT
 Mini-Notes-App
 │
 ├── models
-│   ├── user.model.js
-│   └── note.model.js
+│   ├── users.model.js
+│   └── notes.model.js
 │
 ├── controllers
-│   ├── auth.controller.js
+│   ├── user.controller.js
 │   └── note.controller.js
 │
 ├── routes
-│   ├── auth.routes.js
-│   └── note.routes.js
+│   ├── user.routes.js
+│   └── notes.routes.js
 │
 ├── middleware
 │   └── auth.middleware.js
@@ -64,7 +64,7 @@ Mini-Notes-App
 │   ├── index.html
 │   ├── notes.html
 │   ├── script.js
-│   └── style.css
+│   └── notes.js
 │
 ├── server.js
 └── package.json
